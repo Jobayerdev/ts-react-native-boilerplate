@@ -1,25 +1,29 @@
-import {StyleSheet, Text, View} from 'react-native';
+/*
+ * File: App.tsx
+ * File Created: Saturday, 2nd January 2021 9:29:08 pm
+ * -----
+ * Last Modified: Tuesday, 5th January 2021 12:33:47 am
+ * -----
+ * Description:
+ */
 
-import COLORS from './src/assets/COLORS';
-import HomePage from './src/pages/home/home.page.component';
-import {NavigationContainer} from '@react-navigation/native';
+import {persistor, store} from './src/redux/root/store';
+
+import AppProvider from './src/provider/app.provider';
+import {PersistGate} from 'redux-persist/integration/react';
+import {Provider} from 'react-redux';
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import RootNavigator from './src/navigation/root.navigation';
 
-const Stack = createStackNavigator();
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen
-          name="Home"
-          component={HomePage}
-          options={{
-            headerShown: false,
-          }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <AppProvider>
+          <RootNavigator />
+        </AppProvider>
+      </PersistGate>
+    </Provider>
   );
 };
 
