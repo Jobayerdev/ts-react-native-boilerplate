@@ -2,11 +2,12 @@
  * File: root-reducer.ts
  * File Created: Saturday, 2nd January 2021 9:29:08 pm
  * -----
- * Last Modified: Tuesday, 5th January 2021 12:26:41 am
+ * Last Modified: Tuesday, 5th January 2021 1:40:54 am
  * -----
  * Description:
  */
 
+import alertReducer from '../module/alert/alert.reducer';
 import {combineReducers} from 'redux';
 import {persistReducer} from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
@@ -19,7 +20,9 @@ const persistConfig = {
   whitelist: [''],
 };
 
-const appReducer = combineReducers({});
+const appReducer = combineReducers({
+  stAlert: alertReducer,
+});
 
 const rootReducer = (state: any, action: any) => {
   // when a logout action is dispatched it will reset redux state

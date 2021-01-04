@@ -2,7 +2,7 @@
  * File: app.provider.tsx
  * File Created: Saturday, 2nd January 2021 9:48:20 pm
  * -----
- * Last Modified: Sunday, 3rd January 2021 11:32:56 pm
+ * Last Modified: Tuesday, 5th January 2021 12:46:54 am
  * -----
  * Description:
  */
