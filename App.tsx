@@ -2,14 +2,13 @@
  * File: App.tsx
  * File Created: Saturday, 2nd January 2021 9:29:08 pm
  * -----
- * Last Modified: Tuesday, 5th January 2021 12:46:32 am
+ * Last Modified: Friday, 8th January 2021 11:12:46 pm
  * -----
  * Description:
  */
 
 import {persistor, store} from './src/redux/root/store';
 
-import AppProvider from './src/provider/app.provider';
 import {PersistGate} from 'redux-persist/integration/react';
 import {Provider} from 'react-redux';
 import React from 'react';
@@ -19,9 +18,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <AppProvider>
-          <RootNavigator />
-        </AppProvider>
+        <RootNavigator />
       </PersistGate>
     </Provider>
   );
