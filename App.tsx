@@ -6,7 +6,7 @@ import {tailwind} from './tailwind';
 const App = () => {
   return (
     <View>
-      <Text style={tailwind('bg-green-500')}>Hello</Text>
+      <Text style={tailwind('bg-green-500 dark:bg-gray-800')}>Hello</Text>
     </View>
   );
 };
